@@ -124,13 +124,14 @@ if uploaded_file is not None:
     # Button untuk memulai preprocessing
     if st.button("Preprocessing"):
         # Melakukan preprocessing pada setiap teks dalam file Excel
-
+        
         for i in range(len(df)):
             if i in df.index:
                 text = df.loc[i, "Text"]
             else:
                 print(f"Index {i} is not valid for DataFrame")
-            # text = df.loc[i, "Text"]
+                print(text)
+                
             preprocessed_text = preprocess_text(text, lowercase=lowercase, cleansing=cleansing,
             remove_number=remove_number,remove_punctuation=remove_punctuation, remove_single_char=remove_single_char, remove_duplicate=remove_duplicate, tokenization=tokenization, stopword_removal=stopword_removal, stemming=stemming, slang_normalization=slang_normalization)
             df.loc[i, "Text"] = preprocessed_text

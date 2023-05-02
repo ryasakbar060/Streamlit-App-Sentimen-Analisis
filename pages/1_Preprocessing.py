@@ -151,4 +151,4 @@ if uploaded_file is not None:
             href = f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="processing-data.xlsx">Download Hasil Preprocessing</a>'
             return href
 
-        st.markdown(download_excel(df), unsafe_allow_html=True)
+        st.markdown(download_excel(df), unsafe_allow_html=True) 
